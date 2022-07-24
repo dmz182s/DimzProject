@@ -29,7 +29,6 @@ public class ListDataFragment extends Fragment implements NavigationView.OnNavig
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.lihat_data, container, false);
         mRecyclerView = (RecyclerView) v.findViewById(R.id.data);
-        new LoadlistData().execute();
         return v;
     }
 
@@ -37,4 +36,5 @@ public class ListDataFragment extends Fragment implements NavigationView.OnNavig
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         return true;
     }
+
 }

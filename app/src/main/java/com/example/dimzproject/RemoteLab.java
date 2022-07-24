@@ -63,11 +63,11 @@ public class RemoteLab {
                 String power = ar.getString(Config.TAG_POWER);
                 String time = ar.getString(Config.KEY_TIME);
 
-                Remote remote = new Remote(Integer.parseInt(id));
-                remote.setmPower(Integer.parseInt(power));
-                remote.setmTime(time);
-
-                remotes.add(remote);
+//                Remote remote = new Remote(Integer.parseInt(id));
+//                remote.setmPower(Integer.parseInt(power));
+//                remote.setmTime(time);
+//
+//                remotes.add(remote);
             }
         } catch (JSONException e)
         {

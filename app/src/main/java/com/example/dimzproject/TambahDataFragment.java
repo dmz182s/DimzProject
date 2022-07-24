@@ -61,12 +61,12 @@ public class TambahDataFragment extends Fragment {
         protected void onPostExecute(String s) {
             if (mRemote.getmPower()==1){
                 Toast toast = Toast.makeText(getActivity().getApplicationContext(),
-                        "Lampu Menyala",
+                        "Lampu Mati",
                         Toast.LENGTH_SHORT);
                 toast.show();
             }else {
                 Toast toast = Toast.makeText(getActivity().getApplicationContext(),
-                        "Lampu Padam",
+                        "Lampu Nyala",
                         Toast.LENGTH_SHORT);
                 toast.show();
             }

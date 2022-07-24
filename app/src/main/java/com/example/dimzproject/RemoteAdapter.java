@@ -39,12 +39,12 @@ public class RemoteAdapter extends RecyclerView.Adapter<RemoteAdapter.RemoteView
     {
         remote = mRemotes.get(position);
         if (remote.getmPower()==1){
-            holder.mLamp.setImageResource(R.drawable.lamp_on);
-            holder.mPower.setText("Lampu Menyala");
-        }else
-        {
             holder.mLamp.setImageResource(R.drawable.lamp_off);
             holder.mPower.setText("Lampu Mati");
+        }else
+        {
+            holder.mLamp.setImageResource(R.drawable.lamp_on);
+            holder.mPower.setText("Lampu Nyala");
         }
         SimpleDateFormat sdfTanggal = new SimpleDateFormat("dd MMMM yyyy");
         SimpleDateFormat sdfWaktu = new SimpleDateFormat("HH:mm");
