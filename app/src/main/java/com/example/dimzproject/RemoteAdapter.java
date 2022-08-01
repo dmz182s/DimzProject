@@ -19,33 +19,38 @@ public class RemoteAdapter extends RecyclerView.Adapter<RemoteAdapter.RemoteView
 
     List<Remote> mRemotes;
     Remote remote;
-    Context mcontext;
+    Context mContext;
 
     public RemoteAdapter(Context context, List<Remote> remotes)
     {
-        mcontext = context;
+        mContext = context;
         mRemotes = remotes;
     }
 
-    public RemoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    public RemoteViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        LayoutInflater layoutInflater = LayoutInflater.from(mcontext);
-        return new RemoteViewHolder (layoutInflater.inflate(R.layout.item_list,parent,false));
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
+        return new RemoteViewHolder(view);
 
+//        LayoutInflater layoutInflater = LayoutInflater.from(mContext);
+//        return new RemoteViewHolder (layoutInflater.inflate(R.layout.item_list, parent,false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RemoteViewHolder holder, int position)
+    public void onBindViewHolder(RemoteViewHolder holder, int position)
     {
         remote = mRemotes.get(position);
-        if (remote.getmPower()==1){
-            holder.mLamp.setImageResource(R.drawable.lamp_off);
-            holder.mPower.setText("Lampu Mati");
+        Integer statPower = remote.getmPower();
+
+        if (statPower == 1){
+            holder.mLamp.setImageResource(R.drawable.lamp_hidup);
+            holder.mPower.setText("Lampu Hidup");
         }else
         {
-            holder.mLamp.setImageResource(R.drawable.lamp_on);
-            holder.mPower.setText("Lampu Nyala");
+            holder.mLamp.setImageResource(R.drawable.lamp_mati);
+            holder.mPower.setText("Lampu Mati");
         }
+
         SimpleDateFormat sdfTanggal = new SimpleDateFormat("dd MMMM yyyy");
         SimpleDateFormat sdfWaktu = new SimpleDateFormat("HH:mm");
         Date tanggal = null;
@@ -56,14 +61,22 @@ public class RemoteAdapter extends RecyclerView.Adapter<RemoteAdapter.RemoteView
         }
         holder.mTime.setText(sdfTanggal.format(tanggal)+ " Jam "+ sdfWaktu.format(tanggal));
     }
+
     @Override
-    public int getItemCount(){
+    public int getItemCount() {
         return mRemotes.size();
     }
+
+    public void refreshDataSet(List<Remote> remotes) {
+        this.mRemotes = remotes;
+        notifyDataSetChanged();
+    }
+
     public class RemoteViewHolder extends RecyclerView.ViewHolder{
         ImageView mLamp;
         TextView mPower;
         TextView mTime;
+
         public RemoteViewHolder(@NonNull View itemView)
         {
             super(itemView);

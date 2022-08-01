@@ -1,7 +1,8 @@
 package com.example.dimzproject;
 
 public class Config {
-    public static final String mServerUrl = "http://169.254.120.185:3306/remote_LED/";
+//    Default Localhost IP for AVD is 10.0.2.2
+    public static final String mServerUrl = "http://10.0.2.2/remote_LED/";
 
     public static final String URL_ADD_DATA =mServerUrl+"AddData.php";
     public static final String URL_GET_DATA =mServerUrl+"GetData.php";

@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/lamp_off"
-            android:src="@drawable/lamp_off"
+            android:src="@drawable/lamp_mati"
             android:visibility="gone">
 
         </ImageView>
@@ -23,7 +23,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/lamp_on"
-            android:src="@drawable/lamp_on">
+            android:src="@drawable/lamp_hidup"
+            android:visibility="gone">
 
         </ImageView>
         <ToggleButton

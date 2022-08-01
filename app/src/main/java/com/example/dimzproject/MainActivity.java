@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (savedInstanceState==null){
             setFragment(TambahDataFragment.class);
         }
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

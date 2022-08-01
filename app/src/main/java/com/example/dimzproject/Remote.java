@@ -1,5 +1,11 @@
 package com.example.dimzproject;
 
+import android.util.Log;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Remote {
 
     private int mId;
@@ -21,9 +27,7 @@ public class Remote {
         this.mId = mId;
     }
 
-    public int getmPower() {
-        return mPower;
-    }
+    public int getmPower() { return mPower; }
 
     public void setmPower(int mPower){
         this.mPower = mPower;
@@ -33,9 +37,7 @@ public class Remote {
         return mTime;
     }
 
-    public void setmTime(String mTime){
+    public void setmTime(String mTime) {
         this.mTime = mTime;
     }
-
-
 }
